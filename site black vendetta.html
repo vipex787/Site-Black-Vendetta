@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Vendetta</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #000000, #2b2b2b);
+        }
+
+        /* Barre du haut */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(40, 40, 40, 0.9);
+            padding: 20px;
+            color: white;
+            position: relative;
+        }
+
+        .left a {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+            .left a:hover {
+                opacity: 0.8;
+            }
+
+        .center {
+            flex: 1;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .right {
+            display: flex;
+            gap: 15px;
+            position: relative;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+            .btn:hover {
+                background: white;
+                color: black;
+            }
+
+        /* Menus */
+        .contact-box,
+        .background-box {
+            display: none;
+            position: absolute;
+            top: 60px;
+            width: 280px;
+            background: rgba(20, 20, 20, 0.98);
+            border: 2px solid white;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        .contact-box {
+            right: 0;
+        }
+
+        .background-box {
+            right: 120px;
+        }
+
+            .contact-box h3,
+            .background-box h3 {
+                margin-top: 0;
+                color: white;
+                font-size: 20px;
+            }
+
+            .contact-box p,
+            .background-box p {
+                margin: 10px 0;
+                color: white;
+                font-size: 16px;
+            }
+
+        .contact-box a {
+            color: #8ecbff;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+            .contact-box a:hover {
+                text-decoration: underline;
+            }
+
+        /* Images */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+            .grid img {
+                width: 100%;
+                height: 350px;
+                object-fit: cover;
+                display: block;
+                border-radius: 12px;
+                box-shadow: 0 0 15px rgba(0,0,0,0.4);
+            }
+
+        /* Téléphone */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .right {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box,
+            .background-box {
+                right: 50%;
+                transform: translateX(50%);
+                top: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="left">
+            <a href="index.html">Site black vendetta</a>
+        </div>
+
+        <div class="center">black vendetta</div>
+
+        <div class="right">
+            <a href="https://discord.gg/ptP6dT4eHU" class="btn">discord</a>
+            <button class="btn" onclick="toggleBackground()">Background</button>
+            <button class="btn" onclick="toggleContact()">Contact</button>
+
+            <div class="background-box" id="backgroundBox">
+                <h3>Background</h3>
+                <p>sound ...</p>
+            </div>
+
+            <div class="contact-box" id="contactBox">
+                <h3>Contact</h3>
+                <p><strong>Discord :</strong> vipex_787</p>
+                <p><strong>Num :</strong> 555 257 054</p>
+                <p>
+                    <strong>Lien Discord :</strong><br>
+                    <a href="https://discord.gg/ptP6dT4eHU" target="_blank">
+                        https://discord.gg/ptP6dT4eHU
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <img src="https://cdn.discordapp.com/attachments/1429628962157629450/1487447739435581691/IMG_1179.png?ex=69c92d28&is=69c7dba8&hm=bfd2d8203541a1a2d80c0fbc3bbdb2dd87fddaf47f840d998201399cb0caf264&" alt="image 1">
+
+        <img src="https://cdn.discordapp.com/attachments/1429628962157629450/1487447740035104809/IMG_1178.png?ex=69c92d28&is=69c7dba8&hm=55503d1fc8bcd8529645a0cdfd2f7179293997c1d3248d66d3d30bc7afcd44eb&" alt="image 2">
+
+        <img src="https://cdn.discordapp.com/attachments/1429628962157629450/1487447740341293126/IMG_1177.png?ex=69c92d28&is=69c7dba8&hm=a2e84fa2df27c6f0c97dcf92e953b8ebdd80f82b9545228d64111e2c83e4b411&" alt="image 3">
+
+        <img src="https://cdn.discordapp.com/attachments/1429628962157629450/1487447740794540152/IMG_1176.png?ex=69c92d28&is=69c7dba8&hm=8b887d8f43faa7da9839a983367b52dc3621d284bbba944e511d4249678838c3&" alt="image 4">
+    </div>
+
+    <script>
+        function toggleContact() {
+            const contactBox = document.getElementById("contactBox");
+            const backgroundBox = document.getElementById("backgroundBox");
+
+            if (contactBox.style.display === "block") {
+                contactBox.style.display = "none";
+            } else {
+                contactBox.style.display = "block";
+                backgroundBox.style.display = "none";
+            }
+        }
+
+        function toggleBackground() {
+            const backgroundBox = document.getElementById("backgroundBox");
+            const contactBox = document.getElementById("contactBox");
+
+            if (backgroundBox.style.display === "block") {
+                backgroundBox.style.display = "none";
+            } else {
+                backgroundBox.style.display = "block";
+                contactBox.style.display = "none";
+            }
+        }
+
+        window.onclick = function (event) {
+            const contactBox = document.getElementById("contactBox");
+            const backgroundBox = document.getElementById("backgroundBox");
+
+            if (!event.target.matches('.btn')) {
+                contactBox.style.display = "none";
+                backgroundBox.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
